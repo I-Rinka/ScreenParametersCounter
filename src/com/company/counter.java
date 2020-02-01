@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class counter {
 
-    static double tan05 = 8.726868e-3;
-    static double PPD = 57;
+    private static double tan05 = 8.726868e-3;
+    private static double PPD = 57;
     double result;
     Scanner in = new Scanner(System.in);//这里以后可以加接口拓展
 
@@ -27,15 +27,17 @@ public class counter {
     }
 
     //增加一个out，或者是单位换算的函数
-    public void Out() {
-        System.out.printf("对应的公制是：%02f cm\n", (this.result * 2.54));
-        System.out.printf("对应的英制是：%02f 英寸", this.result);
+    public void OutPutAnswer() {
+        System.out.println("为了达到视网膜标准，眼睛和屏幕的距离下限为：");
+        System.out.printf("对应公制是：%02f cm\n", (this.result * 2.54));
+        System.out.printf("对应英制是：%02f 英寸", this.result);
     }
 
     public static void main(String[] args) {
+
         counter distance = new counter();
         distance.CountDistance();
-        distance.Out();
+        distance.OutPutAnswer();
 
     }
 }

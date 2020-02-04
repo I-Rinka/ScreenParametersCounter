@@ -6,28 +6,26 @@ public class ppi {
     int verticalPixels;
     int horizontalPixels;
     double diagonalLine;
-    double PPIResult;
-    Scanner pixelIn = new Scanner(System.in);
+    double PPI;
 
-    public void GetPixels(int verticalPixels, int horizontalPixels) {
-        //
-    }
-
-    public void PPICounter() {
-        this.PPIResult = Math.sqrt(verticalPixels * verticalPixels + horizontalPixels * horizontalPixels) / this.diagonalLine;
-    }
-
-    public void GetPixels() {
+    public ppi() {
+        Scanner pixelIn = new Scanner(System.in);
         System.out.println("请输入水平方向的像素数量：");
-        this.verticalPixels = this.pixelIn.nextInt();
+        this.verticalPixels = pixelIn.nextInt();
         System.out.println("请输入竖直方向的像素数量：");
-        this.horizontalPixels = this.pixelIn.nextInt();
+        this.horizontalPixels = pixelIn.nextInt();
         System.out.println("请输入屏幕的对角线尺寸（英寸）：");
-        this.diagonalLine = this.pixelIn.nextInt();
+        this.diagonalLine = pixelIn.nextInt();
+        this.PPI = Math.sqrt(this.verticalPixels * this.verticalPixels + this.horizontalPixels * this.horizontalPixels)
+                / this.diagonalLine;
+        pixelIn.close();
     }
-    public void GetPPI()
-    {
-        this.GetPixels();
-        this.PPICounter();
+
+    ppi(int verticalPixels, int horizontalPixels, double diagonalLine) {
+        this.verticalPixels = verticalPixels;
+        this.horizontalPixels = horizontalPixels;
+        this.diagonalLine = diagonalLine;
+        this.PPI = Math.sqrt(this.verticalPixels * this.verticalPixels + this.horizontalPixels * this.horizontalPixels)
+                / this.diagonalLine;
     }
 }
